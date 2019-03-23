@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 # Stripe Keys (will need to be hashed and protected)
 STRIPE_SECRET_KEY = 'sk_test_BhA6JSfkTSkoOeaxeuVDsLJj'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_wCGhzCW4WE5vQW3inKtCIoej'
+
+LOGIN_REDIRECT_URL = '/'
