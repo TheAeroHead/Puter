@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+<HEAD>
+	{% load staticfiles %}
+</HEAD>
+<center>
+<h2>Buy Stuff Here!<h2>
+<form action="{% url 'charge' %}" method="post">
+	{% csrf_token %}
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		data-key="{{ key }}"
+		data-description="A Django Charge"
+		data-amount="500"	<!-- Amount Charged in Cents -->
+		data-locale="auto">
+	</script>
+</form>	
+</center>
