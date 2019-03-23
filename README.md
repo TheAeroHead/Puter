@@ -5,6 +5,7 @@ REQUIRED TOOLS: <br>
 1. Installation of Python 3.7.2 or later. (should include sqlite3 and pip) <br>
 2. Installation of Pip (likely installed with Python, if pip -V returns error run standalone installer) <br>
 3. Installation of Pipenv (run pip install pipenv) <br>
+4. Run pipenv shell before any pipenv install (else you won't install to the virtual environment) <br>
 4. Installation of Django 2.1.5 or later. (run pipenv install django) <br>
 5. Installation of PostgreSQL 11.2 or later. (use the enterpriseDB installer, will save a lot of setup headaches) <br>
 6. Installation of pgAdmin4 (recommended and included in enterpriseDB installer) <br> 
