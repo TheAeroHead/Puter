@@ -12,6 +12,7 @@ REQUIRED TOOLS: <br>
 7. Installation of psycopg2 package (run pipenv install psycopg2) <br>
 8. Installation of Python library for Argon2 (run pipenv install django[argon2]) <br>
 9. Installation of Stripe API (run pipenv install stripe) <br>
+10. Installation of Pillow (run pipenv install pillow) <br>
 
 DEVELOPMENT SETUP: <br>
 1. Clone the repository to the computer. (need to install pipenv in repository directory) <br>
