@@ -2,6 +2,11 @@
 Pipfile
 Pipfile.lock
 
+# Migrations
+products/Migrations/
+payments/Migrations/
+users/Migrations/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
