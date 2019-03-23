@@ -4,6 +4,7 @@ import stripe
 from django.conf import settings
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
+from products.models import Item, Category
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 

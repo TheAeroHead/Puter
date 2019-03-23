@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Puter Home</h1>
+  <p>Welcome to Puter, a website developed by <em>pYtHOn dEVeLoPeRs</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The database has the following record counts:</p>
+  <ul>
+    <li><strong>Items:</strong> {{ num_items }}</li>
+    <li><strong>Categories:</strong> {{ num_categories }}</li>
+  </ul>
+{% endblock %}

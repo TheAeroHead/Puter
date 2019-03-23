@@ -19,11 +19,11 @@ from django.conf.urls import include
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
 from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', include('users.urls')), 	# login page should be here
 	path('home/', include('payments.urls')),
 	path('', RedirectView.as_view(url='/login/', permanent=True)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+	path('index/', include('products.urls')),
+]
