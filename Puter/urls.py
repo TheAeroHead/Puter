@@ -21,6 +21,5 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', include('users.urls')), 	# login page should be here
-	path('login/', include('django.contrib.auth.urls')),
 	path('charge/', include('payments.urls')),
 ]
