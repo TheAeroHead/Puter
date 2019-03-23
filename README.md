@@ -19,7 +19,7 @@ DEVELOPMENT SETUP: <br>
 3. pipenv shell to initialize virtual environment within project folder. Removes need to type python in front of manage.py and helps ensure no conflicts between python versions (if multiple installed). <br>
 4. pgAdmin4 to check contents of database from GUI <br>
 5. Make sure that all commands are run after initializing virtual environment with pipenv shell or will throw issues when you runserver. <br>
-6. After installing PostgreSQL, run pgAdmin4 and login (password setup during install). Create new superuser datadmin for development purposes (preset authentication with this user in setttings.py)<br>
+6. After installing PostgreSQL, run pgAdmin4 and login (password setup during install). Create new superuser datadmin for development purposes (preset authentication with this user in settings.py). IF YOU DO NOT DO THIS, THERE WILL BE CONSEQUENCES!<br>
 7. Create new database pUsers and give datadmin priviliges to use it if not already. <br>
 8. Setup development server by running python manage.py makemigrations and python manage.py migrate <br>
 9. Test app view by running python manage.py runserver <br>
