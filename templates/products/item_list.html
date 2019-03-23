@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Item List</h1>
+  {% if item_list %}
+  <ul>
+    {% for Item in item_list %}
+      <li>
+        <a href="{{ Item.get_absolute_url }}">{{ Item.name }}</a> ({{Item.description}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no Items in the library.</p>
+  {% endif %}       
+{% endblock %}
