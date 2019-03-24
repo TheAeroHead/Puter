@@ -9,9 +9,6 @@ class Item(models.Model):
 	image = models.ImageField()
 	#category = models.ForeignKey(Category, on_delete=models.CASCADE) #ForeignKey field allows us to specify another class as a type
 	
-	class Meta:
-		db_table = 'Products'
-	
 	def __str__(self):
 		return self.name
 		
