@@ -3,8 +3,12 @@ import stripe
 
 from django.conf import settings
 from django.views.generic.base import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from products.models import Item, Category
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+# from payments.forms import OrderItemForm
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -26,3 +30,30 @@ def charge(request):
 			source=request.POST['stripeToken']
 		)
 		return render(request, 'charge.html')
+	
+"""	
+def order(request, pk):
+	item_instance = get_object_or_404(ItemInstance, pk)
+	
+	# If this is a POST request then process the Form data
+    if request.method == 'POST':
+		form = OrderItemForm(request.POST)
+		if form.is_valid(): 
+			item_instance.delivery_date = form.cleaned_data['delivery_date']
+			item_instance.save()
+			
+			# redirect to order confirmation page
+			return HttpResponseRedirect(reverse('all-borrowed'))
+	# If this is a GET request, then return default data	
+	else:
+		proposed_delivery_date = datetime.date.today() + datetime.timedelta(days=3)
+        form = OrderItemForm(initial={'delivery_date': proposed_delivery_date})	
+		
+	context = {
+		'form': form,
+		'item_instance': item_instance,
+	}
+	
+	return render(request, 'templates/order_confirmation.html', context)
+			
+"""

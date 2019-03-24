@@ -1,0 +1,13 @@
+<!-- templates/products/search_form.html -->
+<!-- fun fact: use of Django Template language like double bracket variables is still interpreted even if commented out -->
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+	<form action="/index/search_result" method="get">
+		<input type="text" name="query"> <!-- variable of text shown in url as GET request -->
+		<input type="submit" value="Search">
+	</form>
+</body>
+</html>
