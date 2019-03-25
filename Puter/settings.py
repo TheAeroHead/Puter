@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Puter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pUsers',
+        'NAME': 'puter',
 		'USER': 'datadmin',
 		'PASSWORD': 'GoldenEye07',
 		'HOST': 'localhost',

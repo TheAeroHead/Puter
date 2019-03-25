@@ -5,6 +5,9 @@
 	<title>Search</title>
 </head>
 <body>
+	{% if error %}
+        <p style="color: red;">Please submit a search term.</p>
+    {% endif %}
 	<form action="/index/search_result" method="get">
 		<input type="text" name="query"> <!-- variable of text shown in url as GET request -->
 		<input type="submit" value="Search">

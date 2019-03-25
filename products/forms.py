@@ -2,8 +2,10 @@
 from django import forms
 
 class ItemForm(forms.Form):
-	name = models.CharField(max_length=200)
-	description = models.TextField()
-	shipping_speed = models.IntegerField(default=3)
-	price = models.DecimalField(max_digits=6, decimal_places=2)
-	image = models.ImageField()
+	#id = forms.AutoField()
+	name = forms.CharField(max_length=200)
+	description = forms.CharField(widget=forms.Textarea)
+	shipping_speed = forms.IntegerField() #max_digits=6, decimal_places=2
+	price = forms.DecimalField(max_digits=6, decimal_places=2) 
+	#category = forms.CharField(max_length=200)
+	#image = forms.ImageField()
