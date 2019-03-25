@@ -1,8 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="welcome" style="background-color:lightblue">
   <h1>Puter Home</h1>
   <p>Welcome to Puter, a website developed by <em>pYtHOn dEVeLoPeRs</em>!</p>
+  </div>
+	<center><form class="searchBar" action="/index/search_result" method="get">
+		<input type="text" placeholder="What are you looking for?" name="query" size="30">
+		<button type="submit"><i class="fa fa-search"></i></button>
+	</form></center>
   <h2>Dynamic content</h2>
   <p>The database has the following record counts:</p>
   <ul>
