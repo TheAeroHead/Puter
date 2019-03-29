@@ -1,0 +1,64 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<style>
+    
+.button {
+  background-color: #FFFFFF; /* White */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-family: Helvetica Neue;
+  margin: 5px 5px;
+  cursor: pointer;
+}
+    
+.buttonRed {background-color: #F44336;} /* Red */ 
+.buttonOrange {background-color: #FF9900;} /* Orange */
+.buttonYellow {background-color: #FFFF66;} /* Yellow */
+.buttonGreen {background-color: #33CC00;} /* Green */
+.buttonBlue {background-color: #66CCFF;} /* Blue */
+.buttonIndigo {background-color: #9966FF;} /* Indigo */
+.buttonViolet {background-color: #FF0099;} /* Violet */
+.buttonBlack {background-color: #777777;} /* Black */
+    
+</style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="welcome" style="background-color:lightblue">
+  <h1 style="font-family:Helvetica Neue;">Puter</h1>
+  <p style="font-family:Helvetica Neue;">Welcome to Puter, the best place to buy anything computer related!</p>
+  </div>
+	<center><form class="searchBar" action="/index/search_result" method="get">
+		<input type="text" placeholder="What are you looking for?" name="query" size="30">
+		<button type="submit"><i class="fa fa-search"></i></button>
+	</form></center>
+
+  <div style="height:50px"></div>
+
+  <button class="button buttonRed" style="height:200px;width:200px">Cases</button>
+  <button class="button buttonOrange" style="height:200px;width:200px">Motherboards</button>
+  <button class="button buttonYellow" style="height:200px;width:200px">CPU</button>
+  <button class="button buttonGreen" style="height:200px;width:200px">GPU</button>
+
+  <div style="height:5px"></div>
+
+  <button class="button buttonBlue" style="height:200px;width:200px">PSU</button>
+  <button class="button buttonIndigo" style="height:200px;width:200px">Storage</button>
+  <button class="button buttonViolet" style="height:200px;width:200px">Memory</button>
+  <button class="button buttonBlack" style="height:200px;width:200px">Accessories</button>
+
+  <div style="height:50px"></div>
+
+  <h2>Dynamic content</h2>
+  <p>The database has the following record counts:</p>
+  <ul>
+    <li><strong>Items:</strong> {{ num_items }}</li>
+    <li><strong>Categories:</strong> {{ num_categories }}</li>
+  </ul>
+{% endblock %}
