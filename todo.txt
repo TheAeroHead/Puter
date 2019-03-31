@@ -9,9 +9,6 @@ TODO:
 	User model: custom user model or some work around to link addresses and orders to a specific user
 	Sessions: website should not show different data based on whether user is logged in:
 		-link cart to session information, we need to link cart to user for addresses and that requires a user to be logged in
-	CSS styling: mostly for positioning (colors and graphics are extra):
-		-headers for base_generic.html are positioned weirdly and need some inline styling to make them appear on one row.
-		-categories for homepage should be centered
 	*Search filtering: Search results should have filters in sidebar that update what items are displayed
 	*index.html: categories should be used for browsing
 		-Clicking on a category square on the homepage should link to a list of all items in that category
@@ -48,3 +45,6 @@ DONE:
 		-editing user information
 		-signing up
 		-contacting support
+	CSS styling: mostly for positioning (colors and graphics are extra):
+		-headers for base_generic.html are positioned weirdly and need some inline styling to make them appear on one row.
+		-categories for homepage should be centered
