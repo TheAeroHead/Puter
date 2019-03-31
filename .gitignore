@@ -115,3 +115,6 @@ venv.bak/
 #Thumbnail cache files
 Thumbs.db
 media/images/Thumbs.db
+
+# stupid mac files
+.DS_Store
