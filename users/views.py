@@ -18,3 +18,5 @@ def login(request):
 		# user is invalid
 		return render(request, 'registration/login.html') # reloads login page	
 		
+		
+		
