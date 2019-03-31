@@ -240,3 +240,10 @@ class Command(BaseCommand):
 •Fully Modular: Make your builds and upgrades easy, with clean, great-looking results
 •Ten year warranty: Your guarantee of reliable operation that will last across several system builds''', price="179.99", category="PSU", image="images/PSU6.jpg")
 		item.save()
+		item = Item(name='EVGA 750 BQ, 80+ Bronze 750W, Semi Modular, 5 Year Warranty, Includes Free Power On Self Tester, Power Supply 110-BQ-0750-V1', description='''
+•EVGA 750 BQ - "Great Quality, Great Value"
+•80 PLUS Bronze certified, with 85% efficiency or higher under typical loads
+•Fan Size / Bearing: 140mm Teflon Nano-Steel Bearing - Quiet and Intelligent Auto Fan for near-silent operation
+•Heavy-duty protections, including OVP, UVP, OCP, OPP, and SCP
+•5 Year Warranty''', price="84.99", category="PSU", image="images/.jpg")
+		item.save()
