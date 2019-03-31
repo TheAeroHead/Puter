@@ -20,6 +20,9 @@ def profile_info(request):
 
 def order_history(request):
     return render(request, 'products/order_history.html')
+
+def order_confirmation(request):
+    return render(request, 'products/order_confirmation.html')
 	
 def index(request):
 	num_items = Item.objects.count()
