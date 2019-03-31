@@ -1,35 +1,38 @@
 <html>
 	{% extends "base_generic.html" %}
 	{% block sidebar %}{% endblock %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+	<style>
+	.center {
+		
+	}
+	</style>
 <head>
 	
 	{% block title %}<title>Product Details</title>{% endblock %}
 	{% block name %}<h1 style="text-align:center;">Product Details</h1>{% endblock %}
-	
-	<a href="/index" class = button><button style="font-size:20px"> <i class="fa fa-home" style="color:orange"></i></button></a>
-	<a href="/index/cart" class = button><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
-	
-<div style="text-align:right">	
-	<a style = "text-decoration:none;" href="{% url 'profile_info' %}">Profile Info</a>
-	<a style = "text-decoration:none;" href="{% url 'login' %}">Login</a>
-	<a style = "text-decoration:none;" href="">Sign up</a>
-</div>
-<hr>
 </head>
 {% block content %}
 <body>
 	{% for item in items|slice:":1" %}
-	<ul style="list-style-type:none; padding-left:450px;padding-top:120px;padding-bottom:100px; margin: 20px; line-height:200%">
-		<li><img src="{{item.image.url}}" height="120" width="120" alt="Italian Trulli"></li>
-		<li><p><strong>Product Name: </strong>{{item.name}}</p></li>
-		<li><p><strong>Price: </strong>${{item.price}}</p></li>
-		<li><p><strong>Shipping Speed: </strong>{{item.shipping_speed}} days</p></li>
-		<li><input placeholder="quantity" type="number" name="quantity"></li>
-		<li><button style="font-size:20px"> <i class="fa fa-cart-plus" style="color:orange"></i></button></li>
-	</ul>
-	
-	<p><strong>Description: </strong>{{ item.description }}</p>
+	<div style="display:inline-block">
+	<img src="{{item.image.url}}" height="375" width="375" alt="Italian Trulli">
+	</div>
+	<div style="display:inline-block">
+		<p><strong>Product Name: </strong>{{item.name}}</p>
+		<p><strong>Price: </strong>${{item.price}}</p>
+		<p><strong>Shipping Speed: </strong>{{item.shipping_speed}} days</p>
+		<input placeholder="quantity" type="number" name="quantity">
+		<br>
+		<br>
+		<button style="font-size:20px">Add to cart <i class="fa fa-cart-plus" style="color:orange"></i></button>
+	</div>
+	<br>
+	<br>
+	<div style="border:3px solid #000000; width:80%; padding:15px;" class="center">
+		<pre><strong>Description: </strong>{{ item.description }}</pre>
+	</div>
 	{% endfor %}
 </body>
 {% endblock %}

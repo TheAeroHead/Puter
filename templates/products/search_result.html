@@ -5,6 +5,15 @@
 	{% extends "base_generic.html" %}
 	{% block content %}
 	<title><center><h2>Search Results</h2></center></title>
+	<style>
+	pre {
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		word-wrap: break-word;
+	}
+	</style>
 </head>
 	<body>
 		<p>You searched for: <strong>{{ query }}</strong></p>
@@ -15,8 +24,8 @@
 				{% for item in items %}
 				<li>
 					<h2>{{ item.name }}:</h2>
-					<img src="{{ item.image.url }}" height = "60" width = "60">
-					<p>{{item.description}} | {{item.category}} | <strong>${{item.price}}</strong></p>
+					<img src="{{ item.image.url }}" height = "120" width = "120">
+					<pre>{{item.description}} <font size="5"><strong><br>${{item.price}}<br></strong></font></pre>
 					<form action="/index/product_detail" method="get">
 						<!-- variable of text shown in url as GET request -->
 						<input type="hidden" name="itemName" value="{{ item.name }}">
