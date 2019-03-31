@@ -8,6 +8,7 @@ from . import views
 urlpatterns = [
 	#path('', RedirectView.as_view(url='index/cart', permanent=True)),
 	path('', views.cart_detail),
-	path('Add', views.cart_add),
-	path('Remove', views.cart_remove),
+	path('add', views.cart_add),
+	path('remove', views.cart_remove),
+	path('checkout', include('payments.urls')),
 ]

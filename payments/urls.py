@@ -6,7 +6,8 @@ from . import views
 
 urlpatterns = [
 	path('charge/', views.charge, name='charge'),
-	path('', views.HomePageView.as_view(), name='home'),
+	path('checkout/', views.CheckoutPageView.as_view(), name='home'),
+	path('', views.display),
 	#path('', RedirectView.as_view(url='/index/', permanent=True)),
 	#path('', views.index, name='index'),
 ]

@@ -12,24 +12,40 @@ from django.urls import reverse
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-class HomePageView(TemplateView):
-	template_name = 'home.html'
+class CheckoutPageView(TemplateView):
+	template_name = 'cart\checkout.html'
 	
 	def get_context_data(self, **kwargs): 
 		context = super().get_context_data(**kwargs)
 		context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+		context['amount'] = request.POST['total_price']
 		return context
 		
+def display(request):
+	if request.method == 'POST':
+		charge_amount = request.POST['total_price']
+		context = {
+			'amount': charge_amount,
+			'key': settings.STRIPE_PUBLISHABLE_KEY
+		}
+		return render(request, 'cart\checkout.html', context)
+	else:
+		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
+		return response
 	
 def charge(request):
 	if request.method == 'POST':
+		charge_amount = request.POST['amount']
 		charge = stripe.Charge.create(
-			amount=500,			# will need to modify for different charge amounts
-			currency='usd', 	# will need to modify for different currency types (low priority)
+			amount=charge_amount,			# will need to modify for different charge amounts
+			currency='usd', 				# will need to modify for different currency types (low priority)
 			description='A Django charge',
 			source=request.POST['stripeToken']
 		)
 		return render(request, 'charge.html')
+	else:
+		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
+		return response
 	
 """	
 def order(request, pk):
