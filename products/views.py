@@ -59,7 +59,7 @@ def search_result(request):
 
 def add_item(request):
 	if request.method == 'POST':
-		form = ItemForm(request.POST)
+		form = ItemForm(request.POST, request.FILES or None)
 		if form.is_valid():
 			#id = form.cleaned_data['id']
 			name = form.cleaned_data['name']

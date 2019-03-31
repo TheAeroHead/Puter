@@ -13,7 +13,7 @@ class Item(models.Model):
 	description = models.TextField()
 	shipping_speed = models.IntegerField(default=3)
 	price = models.DecimalField(max_digits=6, decimal_places=2)
-	image = models.ImageField(upload_to='static/images', default='static/images/no-img.jpg') #FilePathField("/static/images", match="img.*")
+	image = models.ImageField(upload_to="images", default="images/no-img.jpg") #FilePathField("/static/images", match="img.*")
 	category = models.CharField(max_length=200)
 	
 	def __str__(self):
