@@ -19,7 +19,7 @@ class Item(models.Model):
 	shipping_speed = models.IntegerField(default=3)
 	available = models.BooleanField(default=True)
 	stock = models.PositiveIntegerField()
-	price = models.DecimalField(max_digits=6, decimal_places=2, db_index=True)
+	price = models.DecimalField(max_digits=10, decimal_places=2, db_index=True)
 	image = models.ImageField(upload_to="images", default="images/no-img.jpg") #FilePathField("/static/images", match="img.*")
 	category = models.CharField(max_length=200, db_index=True) #models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
 	
@@ -28,4 +28,10 @@ class Item(models.Model):
 	
 class Order(models.Model):
 	id = models.AutoField(primary_key=True)
+	username = models.CharField(max_length=200)
+	quantity = models.PositiveIntegerField()
+	cost = models.DecimalField(max_digits=10, decimal_places=2)
+	
+	def __str__(self):
+		return self.id
 

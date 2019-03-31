@@ -17,14 +17,9 @@
 	  <div class="col-sm-2">
 	<div>  
 		<a href="/index"><button style="font-size:20px"> <i class="fa fa-home" style="color:orange"></i></button></a>
-		<a href="/index/cart"><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
+		<a href="/cart"><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
 	</div>
      {% block sidebar %}
-        <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="">All Products</a></li>
-          <li><a href="">All Categories</a></li>
-        </ul>
      {% endblock %}
       </div>
 	  
