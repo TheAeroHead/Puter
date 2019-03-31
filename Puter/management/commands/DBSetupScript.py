@@ -5,5 +5,5 @@ class Command(BaseCommand):
     help = "Adds test items to database"
 
     def handle(self, *args, **options):
-        test = Item(name='testName', description='testDescrip', price="3.50", category='test')
+        test = Item(name='testName2', description='testDescrip', price="3.50", category='test', image="images/jeffy.jpg")
         test.save()
