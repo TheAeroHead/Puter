@@ -6,14 +6,6 @@ TODO:
 		-Needs a pay now button that charges user for cost of items in cart (ignore shipping and tax costs for now)
 		-should verify user address or ask to add a new address before pulling up stripe api
 	cognitive walkthrough
-	*FAQ.html needs to give tutorials for using certain elements:
-		-logging in, 
-		-adding items to cart, 
-		-searching, 
-		-viewing cart and paying
-		-editing user information
-		-signing up
-		-contacting support
 	User model: custom user model or some work around to link addresses and orders to a specific user
 	Sessions: website should not show different data based on whether user is logged in:
 		-link cart to session information, we need to link cart to user for addresses and that requires a user to be logged in
@@ -48,3 +40,11 @@ DONE:
 	*sign_up.html: create a signup page. Look for official django documentation, django has a built-in solution just like login.
 	*product_detail.html: should not use a list to display (we want items to display horizontally and not vertically
 		
+	*FAQ.html needs to give tutorials for using certain elements:
+		-logging in, 
+		-adding items to cart, 
+		-searching, 
+		-viewing cart and paying
+		-editing user information
+		-signing up
+		-contacting support
