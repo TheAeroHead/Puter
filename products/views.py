@@ -6,6 +6,7 @@ from .forms import ItemForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
 
 class ItemListView(generic.ListView):
 	model = Item
@@ -87,7 +88,8 @@ def search_result(request):
 			error = True
 		else:
 			message = "<center><h2>Search results for: %r</h2></center>" % request.GET['query']
-			items = Item.objects.filter(name__icontains=query)
+			#items = Item.objects.filter(name__icontains=query)
+			items = supersearch(query)
 			context = {
 				'query': query,
 				'items': items,
@@ -97,6 +99,9 @@ def search_result(request):
 		message = "<center><h2>You searched with an empty field. Please enter a search term</h2></center>"
 		# Deprecated response to return message statement: return HttpResponse(message)
 		return render(request, 'products/search_form.html', {'error':error}) 
+
+def supersearch(query):
+	return Item.objects.annotate(search=SearchVector('name', 'category')).filter(search=query)
 
 def add_item(request):
 	if request.method == 'POST':
