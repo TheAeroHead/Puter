@@ -5,8 +5,8 @@ class Command(BaseCommand):
     help = "Adds test items to database"
 
     def handle(self, *args, **options):
-		item = Item(name='', description='''''', price="", category="", image="images/.jpg")
-		item.save()
+		#item = Item(name='', description='''''', price="", category="", image="images/.jpg")
+		#item.save()
         #motherboards
         item = Item(name='GIGABYTE Z390 AORUS XTREME LGA 1151 (300 Series) Intel Z390 HDMI THUNDERBOLT 3 USB 3.1 Extended ATX Intel Motherboard', description='''
 •Supports Intel 8th & 9th Gen Core i9/i7/i5/i3, Celeron, and Pentium Processors
