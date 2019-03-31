@@ -8,6 +8,9 @@ class ItemListView(generic.ListView):
     model = Item
 	#context_object_name = 'all_item_list'
 	#queryset = Book.objects.filter()
+
+def product_detail(request):
+		return render(request, 'products/product_detail.html')
 	
 def index(request):
 	num_items = Item.objects.count()

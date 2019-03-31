@@ -13,5 +13,6 @@ urlpatterns = [
 	path('search_form', views.search_form, name='search_form'),
 	path('search_result', views.search_result, name='search_result'),
 	path('add_item', views.add_item, name='add_item'),
+	path('product_detail', views.product_detail, name='product_detail'),
 	#path('', views.ItemListView.as_view(), name='Items'),
 ]
