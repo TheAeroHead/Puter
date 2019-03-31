@@ -1,7 +1,9 @@
-from django.core.management.base import BaseCommand
-from Puter.models import Item
+from django.core.management.base import BaseCommand, CommandError
+from products.models import Item
 
 class Command(BaseCommand):
-    test = Item(name='testName', description='testDescrip', price="3.50", category='test')
-    test.save
+    help = "Adds test items to database"
 
+    def handle(self, *args, **options):
+        test = Item(name='testName', description='testDescrip', price="3.50", category='test')
+        test.save()
