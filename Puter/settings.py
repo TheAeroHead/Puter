@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 	'users.apps.UsersConfig',
 	'products.apps.ProductsConfig',
 	'payments.apps.PaymentsConfig',
+    'Puter',
 ]
 
 MIDDLEWARE = [
