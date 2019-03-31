@@ -11,7 +11,7 @@
 
 <style>
     
-.button {
+.input {
   background-color: #FFFFFF; /* White */
   border: none;
   color: black;
@@ -23,16 +23,18 @@
   font-family: Helvetica Neue;
   margin: 5px 5px;
   cursor: pointer;
+    width: 200px;
+    height: 200px;
 }
     
-.buttonRed {background-color: #F44336;} /* Red */ 
-.buttonOrange {background-color: #FF9900;} /* Orange */
-.buttonYellow {background-color: #FFFF66;} /* Yellow */
-.buttonGreen {background-color: #33CC00;} /* Green */
-.buttonBlue {background-color: #66CCFF;} /* Blue */
-.buttonIndigo {background-color: #9966FF;} /* Indigo */
-.buttonViolet {background-color: #FF0099;} /* Violet */
-.buttonBlack {background-color: #777777;} /* Black */
+.inputRed {background-color: #F44336;} /* Red */ 
+.inputOrange {background-color: #FF9900;} /* Orange */
+.inputYellow {background-color: #FFFF66;} /* Yellow */
+.inputGreen {background-color: #33CC00;} /* Green */
+.inputBlue {background-color: #66CCFF;} /* Blue */
+.inputIndigo {background-color: #9966FF;} /* Indigo */
+.inputViolet {background-color: #FF0099;} /* Violet */
+.inputBlack {background-color: #777777;} /* Black */
     
 </style>
 
@@ -56,17 +58,22 @@
 	</form></center>
 <div><center>
   <div style="height:20px"></div>
-  <button class="button buttonRed" style="height:200px;width:200px">Cases</button>
-  <button class="button buttonOrange" onclick="location.href='http://127.0.0.1:8000/index/search_result?query=motherboard'" style="height:200px;width:200px">Motherboards</button>
-  <button class="button buttonYellow" style="height:200px;width:200px">CPU</button>
-  <button class="button buttonGreen" style="height:200px;width:200px">GPU</button>
-
+    
+<form action="/index/search_result" method="get">
+    <input class="input inputRed" type="submit" value="Cases" name="query"/>
+    <input class="input inputOrange" type="submit" value="Motherboards" name="query"/>
+    <input class="input inputYellow" type="submit" value="CPU" name="query"/>
+    <input class="input inputGreen" type="submit" value="GPU" name="query"/>
+</form>
+    
   <div style="height:5px"></div>
-
-  <button class="button buttonBlue" style="height:200px;width:200px">PSU</button>
-  <button class="button buttonIndigo" style="height:200px;width:200px">Storage</button>
-  <button class="button buttonViolet" style="height:200px;width:200px">Memory</button>
-  <button class="button buttonBlack" style="height:200px;width:200px">Accessories</button>
+    
+<form action="/index/search_result" method="get">
+    <input class="input inputBlue" type="submit" value="PSU" name="query"/>
+    <input class="input inputIndigo" type="submit" value="Storage" name="query"/>
+    <input class="input inputViolet" type="submit" value="Memory" name="query"/>
+    <input class="input inputBlack" type="submit" value="Accessories" name="query"/>
+</form>
 
   <div style="height:5px"></div>
 </center></div>
