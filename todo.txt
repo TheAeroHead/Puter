@@ -1,0 +1,47 @@
+TODO:
+	Order model (delivery progress, items, item quantities)
+	Order view (translation of payment app to purchase an item added to the cart)
+	*cart.html: Cart view fleshed out:
+		-displays an order: a list of items to be purchased
+		-Needs a pay now button that charges user for cost of items in cart (ignore shipping and tax costs for now)
+		-should verify user address or ask to add a new address before pulling up stripe api
+	digital wireframes (use justinmind prototyper or even gliffy)
+	scenarios
+	flow charts
+	cognitive walkthrough
+	*Contact.html form should link to a message that says the form was submitted
+	*FAQ.html needs to give tutorials for using certain elements:
+		-logging in, 
+		-adding items to cart, 
+		-searching, 
+		-viewing cart and paying
+		-editing user information
+		-signing up
+		-contacting support
+	User model: custom user model or some work around to link addresses and orders to a specific user
+	Sessions: website should not show different data based on whether user is logged in:
+		-allow access to profile information, else redirect to login
+		-change login and signup links to username and order history, respectively
+		-link cart to session information, we need to link cart to user for addresses and that requires a user to be logged in
+	CSS styling: mostly for positioning (colors and graphics are extra):
+		-headers for base_generic.html are positioned weirdly and need some inline styling to make them appear on one row.
+		-categories for homepage should be centered
+	*Search filtering: Search results should have filters in sidebar that update what items are displayed
+	*index.html: categories should be used for browsing
+		-Clicking on a category square on the homepage should link to a list of all items in that category
+		-try using ItemListView to display all categories (can link with the all categories link in temporary sidebar to test)
+		-will need a modified solution to filter only results with a specific category (use category__icontains for filter option)
+	Sidebar: sidebar is temporary functionality that should only appear on the search results page for filtering
+		-not a priority, this is for making the page look nice and can be ignored for testing purposes
+		-remove sidebar from unnecessary pages and properly position page using CSS
+		-add filters with link to update search_result.html with relevant new filter for items
+	*product_detail.html: should not use a list to display (we want items to display horizontally and not vertically
+	database script: want a script to add 50 unique items with at least one item in each of the 8 categories to the database
+	*add_item.html: work with products/views.py, products/forms.py, Puter/settings.py and Puter/urls.py to fix upload function
+	*sign_up.html: create a signup page. Look for official django documentation, django has a built-in solution just like login.
+	*profile_info.html: needs to be fully fleshed out:
+		-displays relevant user information like email, username and name
+		-should display user shipping address
+		-should have a link to order history (or display order history on page)
+		-should have a button to edit address (address should be displayed as a form in html)
+		
