@@ -60,7 +60,7 @@ def add_item(request):
 			description = form.cleaned_data['description']
 			shipping_speed = form.cleaned_data['shipping_speed']
 			price = form.cleaned_data['price']
-			#category = form.cleaned_data['category']
+			category = form.cleaned_data['category']
 			#image = form.cleaned_data['image']
 			
 			new_item = Item.objects.create(name = name, 
@@ -68,7 +68,8 @@ def add_item(request):
 										shipping_speed = shipping_speed, 
 										price = price,
 										#id = id,
-										#category = category,
+										category = category,
+										#image = image,
 										) 
 			#new_item.set(category)
 			new_item.save()
