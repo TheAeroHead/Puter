@@ -1,4 +1,60 @@
 {% extends "base_generic.html" %}
 {% block content %}
-	<p>The Profile Information Page</p>
+
+<div class="welcome" style="background-color:lightblue">
+    <h3 style="font-family:Helvetica Neue;">My Profile</h3>
+</div>
+
+<br>
+
+<form>
+    <label for="name">Name</label>
+    
+    <br>
+    
+    <input type="text" id="name" name="name" value="John Smith">
+    <span style="margin-left:10em;">
+        <button style="font-family Helvetica;">View Order History</button>
+    </span>
+    
+    <br><br>
+    
+    <p style="font-family:Helvetica;">Shipping Information</p>
+    <hr width="50%" align="left">
+    
+    <label for="address1">Address Line 1</label>
+    <input type="text" id="address1" name="address1" value="1600 Pennsylvania Avenue" size="50">
+    
+    <br>
+    
+    <label for="address2">Address Line 2</label>
+    <input type="text" id="address2" name="address2" placeholder="Apartment, suite, unit, building, floor, etc." size="50">
+    
+    <br>
+    
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" value="NW">
+    
+    <label for="state">State</label>
+    <input type="text" id="state" name="state" value="Washington, D.C.">
+    
+    <label for="zip">Zip Code</label>
+    <input type="text" id="zip" name="zip" value="20500">
+    
+    <br>
+    
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" value="867-5309" size="50">
+    
+    <br>
+    
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="abc@xyz.com" size="50">
+    
+    <br>
+    
+    <input type="submit" value="Edit">
+    
+</form>
+
 {% endblock %}
