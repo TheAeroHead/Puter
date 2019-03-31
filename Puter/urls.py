@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', include('users.urls')), 	# login page should be here
 	path('home/', include('payments.urls')),
-	path('', RedirectView.as_view(url='/login/', permanent=True)),
+	path('', RedirectView.as_view(url='index/', permanent=True)),
+	path('login/', include('users.urls')),
 	path('index/', include('products.urls')),
 	path('index.html', RedirectView.as_view(url='/index', permanent=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

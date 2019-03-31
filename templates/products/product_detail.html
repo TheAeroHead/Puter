@@ -19,7 +19,7 @@
 </head>
 {% block content %}
 <body>
-	{% for item in items %}
+	{% for item in items|slice:":1" %}
 	<ul style="list-style-type:none; padding-left:450px;padding-top:120px;padding-bottom:100px; margin: 20px; line-height:200%">
 		<li><img src="{{item.image.url}}" height="120" width="120" alt="Italian Trulli"></li>
 		<li><p><strong>Product Name: </strong>{{item.name}}</p></li>
