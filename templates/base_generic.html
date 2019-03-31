@@ -32,18 +32,19 @@
 			<div style="text-align:right">
 				<a style = "text-decoration:none;" href="{% url 'profile_info' %}">Profile Info</a> |
 				<a style = "text-decoration:none;" href="{% url 'login' %}">Login</a> |
-				<a style = "text-decoration:none;" href="">Sign up</a>
-				{% block name %}<h2 style="text-align:center;">Puter</h2>{% endblock %}
+				<a style = "text-decoration:none;" href="{% url 'create_user' %}">Sign up</a>
 			</div>
 			
-			{% block content %}{% endblock %}
+			
 	  </div>
 	</div>
   </div>
+  {% block name %}<h2 style="text-align:center;">Puter</h2>{% endblock %}
+  {% block content %}{% endblock %}
 </body>
     
 <footer>
-    <div style="height:5px"></div>
+    {% block spacing %}<div style="height:5px"></div>{% endblock %}
     <div align="center">
         <a href="/index/faq">FAQ</a>
         |
