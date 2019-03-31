@@ -111,3 +111,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#Thumbnail cache files
+Thumbs.db
+media/images/Thumbs.db
