@@ -6,20 +6,20 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         #motherboards
-        item = Item(name='GIGABYTE Z390 AORUS XTREME LGA 1151 (300 Series) Intel Z390 HDMI THUNDERBOLT 3 USB 3.1 Extended ATX Intel Motherboard', description='''Supports Intel 8th & 9th Gen Core i9/i7/i5/i3, Celeron, and Pentium Processors<br>
-Dual Channel Non-ECC Unbuffered DDR4, 4 DIMMs<br>
-Intel Optane Memory Ready<br>
-16 Phases IR Digital VRM Solution with PowIRstage<br>
-Thermal Design with Fins-Array Heatsink, Direct Touch Heatpipe, NanoCarbon Baseplate<br>
-Onboard Intel CNVI 802.11 ac 2x2 Wave 2 Wi-Fi with All new AORUS Antenna<br>
-AMP-UP Audio with High-End ESS SABRE 9018K2M DAC<br>
-AQUANTIA 10GbE BASE-T LAN and Intel Gigabit LAN with cFosSpeed<br>
-Intel Thunderbolt 3 onboard<br>
-Exclusive RGB FAN COMMANDER and OC Touch<br>
-USB TurboCharger for mobile device fast charge support<br>
-RGB FUSION with Multi-Zone Addressable LED Light Show design<br>
-Smart Fan 5 features Multiple Temperature Sensors<br>
-Front USB 3.1 Gen 2 Type-C Header<br>
+        item = Item(name='GIGABYTE Z390 AORUS XTREME LGA 1151 (300 Series) Intel Z390 HDMI THUNDERBOLT 3 USB 3.1 Extended ATX Intel Motherboard', description='''Supports Intel 8th & 9th Gen Core i9/i7/i5/i3, Celeron, and Pentium Processors\n
+Dual Channel Non-ECC Unbuffered DDR4, 4 DIMMs\n
+Intel Optane Memory Ready
+16 Phases IR Digital VRM Solution with PowIRstage
+Thermal Design with Fins-Array Heatsink, Direct Touch Heatpipe, NanoCarbon Baseplate
+Onboard Intel CNVI 802.11 ac 2x2 Wave 2 Wi-Fi with All new AORUS Antenna
+AMP-UP Audio with High-End ESS SABRE 9018K2M DAC
+AQUANTIA 10GbE BASE-T LAN and Intel Gigabit LAN with cFosSpeed
+Intel Thunderbolt 3 onboard
+Exclusive RGB FAN COMMANDER and OC Touch
+USB TurboCharger for mobile device fast charge support
+RGB FUSION with Multi-Zone Addressable LED Light Show design
+Smart Fan 5 features Multiple Temperature Sensors
+Front USB 3.1 Gen 2 Type-C Header
 Triple Ultra-Fast M.2 with Triple Thermal Guards''', price="549.99", category="Motherboard", image="images/Motherboard1.jpg")
         item.save()
         item = Item(name='ASUS ROG Dominus Extreme Intel LGA 3647 for Xeon W-3175X (C621) 12 DIMM DDR4 DIMM.2 U.2 EEB Performance Motherboard with Aquantia 10G LAN, USB 3.1', description='''LGA 3647 socket, engineered to overclock Intel Xeon W-3175X processors
