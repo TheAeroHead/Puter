@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from .forms import ItemForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 class ItemListView(generic.ListView):
 	model = Item
@@ -37,7 +38,8 @@ def create_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse("User created successfully!")
+            messages.success(request, 'Registration successful! You can now login!')
+            return render(request, 'index.html')
     else:
         form = UserCreationForm()
         return render(request, 'create_user.html', {'form': form})	

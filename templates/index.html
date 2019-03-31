@@ -35,6 +35,18 @@
 .buttonBlack {background-color: #777777;} /* Black */
     
 </style>
+
+{% if messages %}
+<center>
+    <strong>
+    {% for message in messages %}
+    <h2{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2{%>
+    {% endfor %}
+    </strong>
+</center>
+{% endif %}
+
+<br>
   	
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
