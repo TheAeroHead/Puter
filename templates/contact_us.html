@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="welcome" style="background-color:lightblue">
+    <h1 style="font-family:Helvetica Neue;">Contact Us</h1>
+    <p style="font-family:Helvetica Neue;">How can we help?</p>
+</div>
+
+<br>
+
+<form>
+    <label for="name">Name</label>
+    <br>
+    <input type="text" id="name" name="name" placeholder="Your name...">
+
+    <br>
+    <br>
+
+    <label for="email">Email</label>
+    <br>
+    <input type="text" id="email" name="email" placeholder="Your email...">
+
+    <br>
+    <br>
+
+    <label for="message">Message</label>
+    <br>
+    <textarea id="message" name="message" placeholder="Write something..." style="height:200px;width:500px"></textarea>
+    
+    <br>
+    <br>
+    
+    <input type="submit" value="Send message">
+</form>
+
+{% endblock %}
