@@ -7,6 +7,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         #item = Item(name='', description='''''', price="", category="", image="images/.jpg")
         #item.save()
+        
         #motherboards
         item = Item(name='GIGABYTE Z390 AORUS XTREME LGA 1151 (300 Series) Intel Z390 HDMI THUNDERBOLT 3 USB 3.1 Extended ATX Intel Motherboard', description='''
 •Supports Intel 8th & 9th Gen Core i9/i7/i5/i3, Celeron, and Pentium Processors
@@ -245,5 +246,148 @@ class Command(BaseCommand):
 •80 PLUS Bronze certified, with 85% efficiency or higher under typical loads
 •Fan Size / Bearing: 140mm Teflon Nano-Steel Bearing - Quiet and Intelligent Auto Fan for near-silent operation
 •Heavy-duty protections, including OVP, UVP, OCP, OPP, and SCP
-•5 Year Warranty''', price="84.99", category="PSU", image="images/.jpg")
+•5 Year Warranty''', price="84.99", category="PSU", image="images/PSU7.jpg")
         item.save()
+        
+        #Storage
+        item = Item(name='Samsung 860 EVO 500GB 2.5 Inch SATA III Internal SSD (MZ-76E500B/AM)', description='''
+•Powered by Samsung V-NAND Technology. Optimized Performance for Everyday Computing
+•Enhanced Performance: Sequential Read/Write speeds up to 550MB/s and 520MB/s respectively
+•Ideal for mainstream PCs and laptops for personal, gaming and business use
+•Hardware/Software Compatibility: Windows 8/Windows 7/Windows Server 2003 (32-bit and 64-bit), Vista (SP1 and above), XP (SP2 and above), MAC OSX, and Linux
+•Included Contents: 2.5" (7mm) SATA III (6Gb/s) SSD & User Manual (All Other Cables, Screws, Brackets Not Included). 5-Year Warranty''', price="109.99", category="Storage", image="images/Storage1.jpg")
+        item.save()
+        item = Item(name='Crucial MX500 500GB 3D NAND SATA 2.5 Inch Internal SSD - CT500MX500SSD1(Z)', description='''
+•Sequential reads/writes up to 560/510 MB/s and random reads/writes up to 95k/90k on all file types
+•Accelerated by Micron 3D NAND technology
+•Integrated Power Loss Immunity preserves all your saved work if the power unexpectedly gets cut
+•Crucial 5-year limited warranty
+•Product ships in Amazon Certified Frustration Free Packaging (may differ from retail packaging depicted in product collateral)''', price="69.95", category="Storage", image="images/Storage2.jpg")
+        item.save()
+        item = Item(name='WD Blue 3D NAND 500GB PC SSD - SATA III 6 Gb/s, 2.5"/7mm - WDS500G2B0A', description='''
+•3D NAND SATA SSD for capacities up to 2TB* with enhanced reliability. |*As used for storage capacity, one terabyte (TB) = one trillion bytes. Total accessible capacity varies depending on operating environment
+•Sequential read speeds up to 560MB/s and sequential write speeds up to 530MB/s.** |**As used for transfer rate or interface, megabyte per second (MB/s) = one million bytes per second and gigabit per second (Gb/s) = one billion bits per second
+•An industry-leading 1.75M hours mean time to failure (MTTF) and up to 500 terabytes written (TBW) for enhanced reliability. | MTTF = Mean Time To Failure based on internal testing using Telcordia stress part testing. TBW (terabytes written) values calculated using JEDEC client workload (JESD219) and vary by product capacity
+•WD F.I.T. Lab certification for compatibility with a wide range of computers
+•5-year manufacturer's limited warranty
+•Free downloadable software to monitor the status of your drive and clone a drive, or backup your data
+•An active power draw up to 25% lower than previous generations of WD Blue SSD''', price="72.99", category="Storage", image="images/Storage3.jpg")
+        item.save()
+        item = Item(name='SanDisk SSD PLUS 480GB Internal SSD - SATA III 6 Gb/s, 2.5"/7mm - SDSSDA-480G-G26', description='''
+•Easy upgrade for faster boot-up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive. Based on published specifications and internal benchmarking tests using PCMark Vantage scores.)
+•Boosts burst write performance, making it ideal for typical PC workloads
+•The perfect balance of performance and reliability
+•Read/write speeds of up to 535MB/s/445MB/s (Based on internal testing; performance may vary depending upon drive capacity, host device, OS and application.)
+•Shock-resistant for proven durability —even if you drop your computer (Shock resistant (up to 1500G) and vibration resistant (5gRMS, 10-2000 HZ/4.9 gRMS, 7-800 HZ), Temperature (from 0 degrees Celcius to 70 degrees Celcius))
+•3-year limited manufacturer warranty''', price="199.99", category="Storage", image="images/Storage4.jpg")
+        item.save()
+        item = Item(name='WD Blue 1TB PC Hard Drive - 7200 RPM Class, SATA 6 Gb/s, 64 MB Cache, 3.5" - WD10EZEX', description='''
+•Reliable everyday computing
+•WD quality and reliability
+•Free Acronis True Image WD Edition cloning software
+•Massive capacities up to 6 TB available
+•2-year manufacturer's limited warranty''', price="109.99", category="Storage", image="images/Storage5.jpg")
+        item.save()
+        item = Item(name='Seagate BarraCuda Internal Hard Drive 2TB SATA 6Gb/s 64MB Cache 3.5-Inch (ST2000DM006)', description='''
+•Cost-effective 7200 RPM internal hard drive upgrade for laptop or desktop computers allows you to store all of your games, music, movies, and more
+•Seagate BarraCuda’s SATA 6Gb/s interface optimizes burst performance while Seagate Secure models offer hardware-based data security
+•Best-fit applications for BarraCuda hard drives include desktop or all-in-one PCs, home servers, entry-level direct-attached storage devices (DAS)
+•2 year limited manufacturer warranty''', price="59.99", category="Storage", image="images/Storage6.jpg")
+        item.save()
+        item = Item(name='WD Black 2TB Performance Desktop Hard Disk Drive - 7200 RPM SATA 6 Gb/s 64MB Cache 3.5 Inch - WD2003FZEX', description='''
+•Next-generation desktop performance hard drive designed to intensify your PC experience
+•Performance storage available in up to 6TB capacities
+•2X DRAM cache up to 256 MB for faster read operations
+•Designed for creative professionals, gamers and system builders
+•5-year manufacturer's limited warranty''', price="114.96", category="Storage", image="images/Storage7.jpg")
+        item.save()
+        
+        #Memory
+        item = Item(name='Corsair Vengeance LPX 16GB (2x8GB) DDR4 DRAM 3000MHz C15 Desktop Memory Kit - Black (CMK16GX4M2B3000C15)', description='''
+•Designed for high-performance overclocking
+•Designed for great looks; SPD Speed: 2133MHz
+•Performance and Compatibility
+•Low-profile heat spreader design
+•Compatibility: Intel 100 Series,Intel 200 Series,Intel 300 Series,Intel X299''', price="189.99", category="Memory", image="images/Memory1.jpg")
+        item.save()
+        item = Item(name='CORSAIR Vengeance RGB PRO 16GB (2x8GB) DDR4 3200MHz C16 LED Desktop Memory - Black', description='''
+•Dynamic Multi-Zone RGB Lighting
+•Next Generation Software
+•Custom Performance PCB
+•Tightly Screened Memory. Maximum Bandwidth and Tight Response Times
+•Compatibility: Intel 100 Series, Intel 200 Series, Intel 300 Series, Intel X299, AMD 300 Series, AMD 400 Series''', price="139.99", category="Memory", image="images/Memory2.jpg")
+        item.save()
+        item = Item(name='G.SKILL TridentZ RGB Series 16GB (2 x 8GB) 288-Pin DDR4 3000MHz (PC4 24000) Desktop Memory Model F4-3000C16D-16GTZR', description='''
+•DDR4 3000 (PC4 24000)
+•Timing 16-18-18-38
+•Cas Latency 16
+•Voltage 1.35V''', price="119.95", category="Memory", image="images/Memory3.jpg")
+        item.save()
+        item = Item(name='Corsair Vengeance LPX 16GB (2x8GB) DDR4 DRAM 3200MHz C16 Desktop Memory Kit - Black (CMK16GX4M2B3200C16)', description='''
+•Vengeance LPX memory is designed for high-performance overclocking. The heatspreader is made of pure aluminum for faster heat dissipation, and the eight-layer PCB helps manage heat and provides superior overclocking headroom
+•Compatible with Intel 100 Series,Intel 200 Series,Intel 300 Series,Intel X299,AMD 300 Series, AMD 400 Series
+•Compatibility tested across 100 Series motherboards for reliably fast performance
+•XMP 2.0 support for trouble-free, automatic overclocking
+•SPD Speed:2133MHz''', price="119.59", category="Memory", image="images/Memory4.jpg")
+        item.save()
+        item = Item(name='Ballistix Sport LT 16GB Kit (8GBx2) DDR4 3000 MT/s (PC4-24000) CL16 SR x8 DIMM 288-Pin Memory - BLS2K8G4D30BESBK (Gray)', description='''
+•Speeds up to 3200 MT/s
+•Faster speeds and responsiveness than standard DDR4 memory
+•Ideal for gamers and performance enthusiasts
+•Intel XMP 2.0 profiles for easy configuration
+•Unbuffered / 8GB based / Single Rank module''', price="92.99", category="Memory", image="images/Memory5.jpg")
+        item.save()
+        item = Item(name='XPG Z1 DDR4 2400MHz (PC4 19200) 16GB (2x8GB) Gaming Memory Modules, Silver (AX4U240038G16-DSZ1)', description='''
+•PC4-19200 CL16-16-16 1.2V
+•Consume less power than DDR3
+•Overclock compatible
+•2 oz copper for better cooling
+•Ideal for PC upgrades''', price="139.99", category="Memory", image="images/Memory6.jpg")
+        item.save()
+        
+        #Accessories
+        item = Item(name='Razer Naga Trinity: True 16,000 5G Optical Sensor - 3 Interchangeable Side Plates - Chroma Enable - Gaming Mouse', description='''
+•Incredibly Accurate-16, 000 DPI 5G Optical sensor
+•More Customization-3 interchangeable side plates with 2, 7 and 12-button configurations
+•More Commands-Up to 19 fully programmable buttons
+•Designed to Win-Enhanced right-handed form factor
+•Powered by Razer Chroma. Up to 450 inches per second (IPS) / 50 G acceleration''', price="99.99", category="Accessories", image="images/Accessories1.jpg")
+        item.save()
+        item = Item(name='CORSAIR Scimitar Pro RGB - MMO Gaming Mouse - 16,000 DPI Optical Sensor - 12 Programmable Side Buttons - Yellow', description='''
+•Exclusive key Slider macro button control system. Compatibility - A PC with a USB port , Windows 10, Windows 8 or Windows 7 , An internet connection is required to download the Corsair Utility Engine software
+•12 optimized mechanical side buttons designed to Pro player specifications for consistent tactile feedback and precise actuation. Textured side button keycaps provide enhanced grip and feel
+•The patent pending design provides 8mm of key travel with secure lock to ensure every button is within reach. Surface calibration tuning Utility: optimizes sensor precision and responsiveness for your playing surface
+•Onboard storage with hardware macro playback: three predefined profiles include actions common for MMO gaming as well as General purpose keyboard shortcuts
+•Custom, gaming Grade 16000 DPI Optical sensor: ultra-accurate and high-speed tracking Engine. Cable: 1.8 meter''', price="79.99", category="Accessories", image="images/Accessories2.jpg")
+        item.save()
+        item = Item(name='Logitech G910 Orion Spark RGB Mechanical Gaming Keyboard – 9 Programmable Buttons, Dedicated Media Controls', description='''
+•World's fastest RGB mechanical gaming keyboard: Exclusive Romer-G Mechanical Switches with up to 25 percent faster actuation
+•Customizable RGB illumination: Personalize individual key lighting from a palette of 16 million colors ; Cable Length (Power/Charging): 6 ft (1.8 m)
+•Arx Control App and smartphone dock: Instantly access in-game data on your smartphone or tablet without interrupting the game
+•9 programmable G-keys: Create custom game macros to execute complex commands with lightning speed and accuracy
+•Dedicated media controls: One-touch control panel for quick access to play, pause, mute, volume and skip''', price="179.99", category="Accessories", image="images/Accessories3.jpg")
+        item.save()
+        item = Item(name='Logitech G430 7.1 DTS Headphone: X and Dolby Surround Sound Gaming Headset for PC, Playstation 4 – On-Cable Controls – Sports-Performance Ear Pads – Rotating Ear Cups – Light Weight Design', description='''
+•DTS Headphone: X and Dolby 7. 1 surround Sound: experience an immersive 360-degree sound field that lets you hear what you can't see
+•Built for comfort: lightweight design and soft sport cloth ear cups with 90-degree swivel for maximum comfort and a personalized fit
+•Folding, noise-cancelling boom mic: reduces background noise for clear voice pick up and rotates up and out of the way
+•Impedance: 32 ohms. On-cable sound controls: volume dial and mute switch are close at hand for quick Audio adjustments
+•Compatibility: Works with PS4 and Windows 10, Windows 8, Windows 7 or windows Vista computers. Sensitivity: 90dB SPL/mw.Cable Length: 10.5 ft
+•Headphone- frequency response: 20Hz-20KHz. Microphone pickup pattern: cardioid (unidirectional)-frequency response: 50-20khz. Please note: kindly refer the user guide before use''', price="79.99", category="Accessories", image="images/Accessories4.jpg")
+        item.save()
+        item = Item(name='ARCTIC MX-4 - Thermal Compound Paste For Coolers | Heat Sink Paste | Composed of Carbon Micro-particles | Easy to Apply | High Durability - 4 Grams', description='''
+•It guarantees that heat generated from the CPU or GPU is dissipated efficiently.
+•In contrast to metal and silicon thermal compound, the MX-4 does not compromise over time.
+•With an ideal consistency, the MX-4 is very easy to use, even for beginners.
+•Formula, the MX-4 guarantees exceptional heat dissipation from the components and supports the stability needed to push your system to its limit.
+•Composed of carbon micro-particles which lead to an extremely high thermal conductivity.''', price="9.99", category="Accessories", image="images/Accessories5.jpg")
+        item.save()
+        item = Item(name='Arctic Silver 5 Thermal Compound (Pack of 2)', description='''
+•Premium silver polysynthetic thermal compound
+•Use between CPU's and heatsinks or water-cooling solutions
+•Will not separate, run, migrate, or bleed
+•Does not contain any silicone
+•3.5 gram tube will cover 20 to 30 small cpu's''', price="8.93", category="Accessories", image="images/Accessories6.jpg")
+        item.save()
+        
+        
