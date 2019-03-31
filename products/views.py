@@ -5,12 +5,15 @@ from django.http import HttpResponse
 from .forms import ItemForm
 
 class ItemListView(generic.ListView):
-    model = Item
+	model = Item
+	queryset = Item.objects.filter(name__icontains = model.name)
 	#context_object_name = 'all_item_list'
-	#queryset = Book.objects.filter()
 
-def product_detail(request):
-		return render(request, 'products/product_detail.html')
+def cart(request):
+	return render(request, 'products/cart.html')
+	
+def profile_info(request):
+	return render(request, 'products/profile_info.html')
 	
 def index(request):
 	num_items = Item.objects.count()
@@ -40,6 +43,21 @@ def hello(request):
 	
 def search_form(request):
 	return render(request, 'products/search_form.html')
+
+def product_detail(request):
+	error = False
+	if 'itemName' in request.GET:
+		itemName = request.GET['itemName']
+		if not itemName:
+			error = True
+		else:
+			items = Item.objects.filter(name__icontains=itemName)
+			context = {
+				'items': items,
+			}
+			return render(request, 'products/product_detail.html', context)
+	else:
+		return render(request, 'products/search_result.html', {'error':error})
 	
 def search_result(request):
 	error = False

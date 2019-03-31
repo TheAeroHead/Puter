@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block name %}
-  <div class="welcome" style="background-color:lightblue">
+  <div class="welcome" style="background-color:white">
   <h1 style="font-family:Helvetica Neue; text-align:center;">Puter</h1>
   <p style="font-family:Helvetica Neue; text-align:center;">Welcome to Puter, the best place to buy anything computer related!</p>
   </div>
@@ -42,8 +42,8 @@
 		<input type="text" placeholder="What are you looking for?" name="query" size="30">
 		<button type="submit"><i class="fa fa-search"></i></button>
 	</form></center>
-
-  <div style="height:50px"></div>
+<div><center>
+  <div style="height:20px"></div>
 
   <button class="button buttonRed" style="height:200px;width:200px">Cases</button>
   <button class="button buttonOrange" style="height:200px;width:200px">Motherboards</button>
@@ -57,7 +57,10 @@
   <button class="button buttonViolet" style="height:200px;width:200px">Memory</button>
   <button class="button buttonBlack" style="height:200px;width:200px">Accessories</button>
 
-  <div style="height:50px"></div>
+  <div style="height:5px"></div>
+</center></div>
+
+{% endblock %}
 
   <h2>Dynamic content</h2>
   <p>The database has the following record counts:</p>
@@ -67,5 +70,5 @@
   </ul>
   <div class="featured">
 	
-{% endblock %}
+
 

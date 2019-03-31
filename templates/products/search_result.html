@@ -14,9 +14,14 @@
 			<ul>
 				{% for item in items %}
 				<li>
-					<h2>{{ item.name }}:</h2>
+					<a href="{% url 'product_detail' %}"><h2>{{ item.name }}:</h2></a>
 					<img src="{{ item.image.url }}" height = "60" width = "60">
 					<p>{{item.description}} | {{item.category}} | <strong>${{item.price}}</strong></p>
+					<form action="/index/product_detail" method="get">
+						<!-- variable of text shown in url as GET request -->
+						<input type="hidden" name="itemName" value="{{ item.name }}">
+						<input type="submit" value="View Details">
+					</form>
 				</li>
 				{% endfor %}
 			</ul>

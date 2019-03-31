@@ -27,4 +27,5 @@ urlpatterns = [
 	path('home/', include('payments.urls')),
 	path('', RedirectView.as_view(url='/login/', permanent=True)),
 	path('index/', include('products.urls')),
+	path('index.html', RedirectView.as_view(url='/index', permanent=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

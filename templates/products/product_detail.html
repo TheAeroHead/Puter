@@ -1,32 +1,36 @@
 <html>
+	{% extends "base_generic.html" %}
+	{% block sidebar %}{% endblock %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 <head>
 	
-	<title>Product Details</title>
-	<h1 style="text-align:center;">Product Details</h1>
+	{% block title %}<title>Product Details</title>{% endblock %}
+	{% block name %}<h1 style="text-align:center;">Product Details</h1>{% endblock %}
 	
-	<a href="/index.html" class = button><button style="font-size:20px"> <i class="fa fa-home" style="color:orange"></i></button></a>
-	<button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button>
+	<a href="/index" class = button><button style="font-size:20px"> <i class="fa fa-home" style="color:orange"></i></button></a>
+	<a href="/index/cart" class = button><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
 	
 <div style="text-align:right">	
-	<a style = "text-decoration:none;" href="">Profile Info</a>
+	<a style = "text-decoration:none;" href="{% url 'profile_info' %}">Profile Info</a>
 	<a style = "text-decoration:none;" href="{% url 'login' %}">Login</a>
 	<a style = "text-decoration:none;" href="">Sign up</a>
 </div>
 <hr>
 </head>
+{% block content %}
 <body>
-	<img src="" alt="Italian Trulli">
+	{% for item in items %}
 	<ul style="list-style-type:none; padding-left:450px;padding-top:120px;padding-bottom:100px; margin: 20px; line-height:200%">
-		<li><strong>Product Name:</strong></li>
-		<li><strong>Price:</strong></li>
-		<li><strong>Shipping Price:</strong></li>
-		<li><strong>Shipping Speed:</strong></li>
+		<li><img src="{{item.image.url}}" height="120" width="120" alt="Italian Trulli"></li>
+		<li><p><strong>Product Name: </strong>{{item.name}}</p></li>
+		<li><p><strong>Price: </strong>${{item.price}}</p></li>
+		<li><p><strong>Shipping Speed: </strong>{{item.shipping_speed}} days</p></li>
 		<li><input placeholder="quantity" type="number" name="quantity"></li>
 		<li><button style="font-size:20px"> <i class="fa fa-cart-plus" style="color:orange"></i></button></li>
 	</ul>
 	
-	
-	<p><strong>Description:</strong></p>
+	<p><strong>Description: </strong>{{ item.description }}</p>
+	{% endfor %}
 </body>
+{% endblock %}
 </html>
