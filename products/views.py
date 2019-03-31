@@ -73,6 +73,20 @@ def product_detail(request):
 			return render(request, 'products/product_detail.html', context)
 	else:
 		return render(request, 'products/search_result.html', {'error':error})
+		
+def view_cart(request):
+	error = False
+	if 'items' in request.GET:
+		items = request.GET['items']
+		if not items:
+			error = True
+		else:
+			context = {
+				'items': items,
+			}
+			return render(request, 'products/cart.html', context)
+	else:
+		return render(request, 'products/cart.html', {'error': error})
 	
 def search_result(request):
 	error = False

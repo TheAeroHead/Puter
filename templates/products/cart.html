@@ -1,6 +1,29 @@
 <!-- /templates/products/cart.html-->
 {% extends "base_generic.html" %}
-
+{% block title %}<title>Cart</title>{% endblock %}
+{% block name %}<center><h1>The Cart Page</h1></center>{% endblock %}
+{% block sidebar %}{% endblock %}
 {% block content %}
-	<p>The Cart Page</p>
+	{% if items %}
+	<center>
+		<p>Cart contains {{ items|length }} item{{ items|pluralize }}.</p>
+		<ul>
+			{% for item in items %}
+			<li>
+				<h2>{{ item.name }}:</h2>
+				<img src="{{ item.image.url }}" height = "120" width = "120">
+				<p><strong>{{item.category}}</strong> | <strong>${{item.price}}</strong></p>
+				<form action="/index/product_detail" method="get">
+					<!-- variable of text shown in url as GET request -->
+					<input type="hidden" name="itemName" value="{{ item.name }}">
+					<input type="submit" value="View Details">
+				</form>
+			</li>
+			{% endfor %}
+		</ul>
+	</center>
+	{% else %}
+		<center><p>Your cart is empty.</p></center>
+	{% endif %}
+		
 {% endblock %}

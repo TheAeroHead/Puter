@@ -21,12 +21,12 @@
 <body>
 	{% for item in items|slice:":1" %}
 	<ul style="list-style-type:none; padding-left:450px;padding-top:120px;padding-bottom:100px; margin: 20px; line-height:200%">
-		<li><img src="{{item.image.url}}" height="120" width="120" alt="Italian Trulli"></li>
+		<li><img src="{{ item.image.url }}" height="120" width="120" alt="Italian Trulli"></li>
 		<li><p><strong>Product Name: </strong>{{item.name}}</p></li>
 		<li><p><strong>Price: </strong>${{item.price}}</p></li>
 		<li><p><strong>Shipping Speed: </strong>{{item.shipping_speed}} days</p></li>
 		<li><input placeholder="quantity" type="number" name="quantity"></li>
-		<li><button style="font-size:20px"> <i class="fa fa-cart-plus" style="color:orange"></i></button></li>
+		<li><button style="font-size:20px"> <i class="fa fa-cart-plus" style="color:orange"></i></button><p>Add to Cart</p></li>
 	</ul>
 	
 	<p><strong>Description: </strong>{{ item.description }}</p>
