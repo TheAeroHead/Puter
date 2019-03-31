@@ -124,9 +124,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+#os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),'../' 'media'))
 MEDIA_URL = '/media/'
 
 # Stripe Keys (will need to be hashed and protected)

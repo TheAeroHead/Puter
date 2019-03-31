@@ -3,6 +3,8 @@ from django.views import generic
 from .models import Item, Category
 from django.http import HttpResponse
 from .forms import ItemForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class ItemListView(generic.ListView):
 	model = Item
@@ -29,6 +31,16 @@ def index(request):
 
 def faq(request):
     return render(request, 'faq.html')
+	
+def create_user(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("User created successfully!")
+    else:
+        form = UserCreationForm()
+        return render(request, 'create_user.html', {'form': form})	
 
 def contact_us(request):
     return render(request, 'contact_us.html')
@@ -91,7 +103,7 @@ def add_item(request):
 			shipping_speed = form.cleaned_data['shipping_speed']
 			price = form.cleaned_data['price']
 			category = form.cleaned_data['category']
-			#image = form.cleaned_data['image']
+			image = form.cleaned_data['image']
 			
 			new_item = Item.objects.create(name = name, 
 										description = description, 
@@ -99,7 +111,7 @@ def add_item(request):
 										price = price,
 										#id = id,
 										category = category,
-										#image = image,
+										image = image,
 										) 
 			#new_item.set(category)
 			new_item.save()
