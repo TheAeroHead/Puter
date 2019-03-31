@@ -1,17 +1,15 @@
 <!-- templates/registration/login.html -->
 <HTML>
- {% extends "base.html" %}
+ {% extends "base_generic.html" %}
+ {% block sidebar %}{% endblock %}
+ {% block name %}<center><h2> Login: </h2></center>{% endblock %}
  {% block content %}
 <HEAD>
 	{% load staticfiles %}
 </HEAD>
 <center>
 	<!-- Enter text and elements here-->
-	<h2> Welcome to Puter! Login Below: </h2>
-
-
-
-
+	
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -46,4 +44,6 @@
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 </center>
 {% endblock %}
+
+{% block spacing %}<footer><div style="height:400px"></div></footer>{% endblock %}
 </HTML>
