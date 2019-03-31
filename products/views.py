@@ -18,6 +18,12 @@ def index(request):
     } # Python dictionary holds all variables to be inserted into index.html template
 	return render(request, 'index.html', context=context)
 
+def faq(request):
+    return render(request, 'faq.html')
+
+def contact_us(request):
+    return render(request, 'contact_us.html')
+
 def hello(request):
 	response = HttpResponse("<center><h2>Welcome to the page at %s</h2></center>" % request.path)
 	user_info = request.META.get('HTTP_USER_AGENT', 'unknown')
