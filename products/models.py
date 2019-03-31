@@ -13,8 +13,8 @@ class Item(models.Model):
 	description = models.TextField()
 	shipping_speed = models.IntegerField(default=3)
 	price = models.DecimalField(max_digits=6, decimal_places=2)
-	#image = models.ImageField()
-	#category = models.ManyToManyField(Category) #ForeignKey(Category, on_delete=models.CASCADE) #ForeignKey field allows us to specify another class as a type
+	image = models.ImageField(upload_to='static/images', default='static/images/no-img.jpg') #FilePathField("/static/images", match="img.*")
+	category = models.CharField(max_length=200)
 	
 	def __str__(self):
 		return self.name

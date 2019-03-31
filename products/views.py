@@ -21,6 +21,12 @@ def index(request):
     } # Python dictionary holds all variables to be inserted into index.html template
 	return render(request, 'index.html', context=context)
 
+def faq(request):
+    return render(request, 'faq.html')
+
+def contact_us(request):
+    return render(request, 'contact_us.html')
+
 def hello(request):
 	response = HttpResponse("<center><h2>Welcome to the page at %s</h2></center>" % request.path)
 	user_info = request.META.get('HTTP_USER_AGENT', 'unknown')
@@ -63,7 +69,7 @@ def add_item(request):
 			description = form.cleaned_data['description']
 			shipping_speed = form.cleaned_data['shipping_speed']
 			price = form.cleaned_data['price']
-			#category = form.cleaned_data['category']
+			category = form.cleaned_data['category']
 			#image = form.cleaned_data['image']
 			
 			new_item = Item.objects.create(name = name, 
@@ -71,7 +77,8 @@ def add_item(request):
 										shipping_speed = shipping_speed, 
 										price = price,
 										#id = id,
-										#category = category,
+										category = category,
+										#image = image,
 										) 
 			#new_item.set(category)
 			new_item.save()
