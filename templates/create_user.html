@@ -1,5 +1,5 @@
 <html>
-<form action='/create-user/' method='post'>
+<form action="{% url 'create_user' %}" method='post'>
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
