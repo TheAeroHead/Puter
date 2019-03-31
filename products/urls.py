@@ -18,6 +18,7 @@ urlpatterns = [
     path('contact_us', views.contact_us, name='contact_us'),
 	path('cart', views.cart, name='cart'),
 	path('profile_info', views.profile_info, name='profile_info'),
+    path('order_history', views.order_history, name='order_history'),
 	#path('viewItem', views.ItemListView.as_view(), name='viewItem'),
 	#path('', views.ItemListView.as_view(), name='Items'),
 ]
