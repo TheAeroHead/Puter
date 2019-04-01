@@ -1,0 +1,44 @@
+<!-- orders/create.html -->
+{% extends "base_generic.html" %}
+{% load static %}
+{% block title %}
+    <title>Your Shopping Cart | Checkout</title>
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 6%">
+            <div class="col-md-8">
+                <h4 class="page-header">Confirm Shipping Information</h4>
+				<form action="{% url 'charge' %}" method="post">
+					{% csrf_token %}
+					{{ form.as_p }}<br>
+					<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						data-key="{{ key }}"
+						data-description="New Order"
+						data-amount="{{ total_price }}"	<!-- Amount Charged in Cents -->
+						data-locale="auto">
+					</script>
+				</form>	
+            </div>
+            <div class="col-md-4">
+                <div class="page-header">
+                    Your Order
+                </div>
+                <ul class="list-group">
+                    {% for item in cart %}
+                        <li class="list-group-item">
+                        {{ item.quantity }}x {{ item.product.name }}
+                        <span>${{ item.total_price }}</span>
+                        </li>
+                    {% endfor %}
+
+                <li class="list-group-item active">Total Cost: ${{ cart.get_total_price }}</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

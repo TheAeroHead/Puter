@@ -5,7 +5,7 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 from django.shortcuts import render, get_object_or_404
 from products.models import Item, Category
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from cart.cart import Cart
 
@@ -29,10 +29,13 @@ def display(request):
 			'amount': charge_amount,
 			'key': settings.STRIPE_PUBLISHABLE_KEY
 		}
-		return render(request, 'cart/checkout.html', context)
+		return render(request, 'orders/create.html', context) #render(request, 'cart/checkout.html', context)
 	else:
-		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
-		return response
+		context = {
+			'key': settings.STRIPE_PUBLISHABLE_KEY
+		}
+		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>")
+		return render(request, 'orders/create.html', context)
 	
 def charge(request):
 	cart = Cart(request)
@@ -47,7 +50,7 @@ def charge(request):
 		)
 		return render(request, 'order_confirmation.html')
 	else:
-		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
+		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>")
 		return response
 	
 """	
