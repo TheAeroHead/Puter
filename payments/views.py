@@ -13,7 +13,7 @@ from django.urls import reverse
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class CheckoutPageView(TemplateView):
-	template_name = 'cart\checkout.html'
+	template_name = 'cart/checkout.html'
 	
 	def get_context_data(self, **kwargs): 
 		context = super().get_context_data(**kwargs)
@@ -28,7 +28,7 @@ def display(request):
 			'amount': charge_amount,
 			'key': settings.STRIPE_PUBLISHABLE_KEY
 		}
-		return render(request, 'cart\checkout.html', context)
+		return render(request, 'cart/checkout.html', context)
 	else:
 		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
 		return response
