@@ -1,15 +1,9 @@
 TODO:
 	Order model (delivery progress, items, item quantities)
-	Order view (translation of payment app to purchase an item added to the cart)
-	cognitive walkthrough
 	User model: custom user model or some work around to link addresses and orders to a specific user
 	Sessions: website should not show different data based on whether user is logged in:
 		-link cart to session information, we need to link cart to user for addresses and that requires a user to be logged in
 	*Search filtering: Search results should have filters in sidebar that update what items are displayed
-	Sidebar: sidebar is temporary functionality that should only appear on the search results page for filtering
-		-not a priority, this is for making the page look nice and can be ignored for testing purposes
-		-remove sidebar from unnecessary pages and properly position page using CSS
-		-add filters with link to update search_result.html with relevant new filter for items
 	*profile_info.html: needs to be fully fleshed out:
 		-displays relevant user information like email, username and name
 		-should display user shipping address
@@ -48,3 +42,9 @@ DONE:
 		-displays an order: a list of items to be purchased
 		-Needs a pay now button that charges user for cost of items in cart (ignore shipping and tax costs for now)
 		-should verify user address or ask to add a new address before pulling up stripe api
+	Sidebar: sidebar is temporary functionality that should only appear on the search results page for filtering
+		-not a priority, this is for making the page look nice and can be ignored for testing purposes
+		-remove sidebar from unnecessary pages and properly position page using CSS
+		-add filters with link to update search_result.html with relevant new filter for items
+	Order view (translation of payment app to purchase an item added to the cart)
+	cognitive walkthrough
