@@ -118,7 +118,7 @@ def search_result(request):
 		return render(request, 'products/search_form.html', {'error':error}) 
 
 def supersearch(query):
-	return Item.objects.annotate(search=SearchVector('name', 'category')).filter(search=query)
+	return Item.objects.annotate(search=SearchVector('name', 'category')).filter(search=query).order_by('price')
 
 def add_item(request):
 	if request.method == 'POST':
