@@ -31,6 +31,7 @@ urlpatterns = [
 	path('checkout', include('payments.urls')),
 	path('', RedirectView.as_view(url='index/', permanent=True)),
 	path('login/', include('users.urls')),
+	path('/login/', include('users.urls')),
 	path('index/', include('products.urls')),
 	path('index.html', RedirectView.as_view(url='/index', permanent=True)),
 	path('cart/', include('cart.urls'), name='cart'),
