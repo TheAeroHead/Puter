@@ -1,9 +1,16 @@
 <html>
-<body style="background-color:#505050">
+	{% extends "base_generic.html" %}
+	{% block sidebar %}{% endblock %}
+	{% block title %}{% endblock %}
+	{% block name %}{% endblock %}
+	{% block content %}
+<body>
+<br>
 <form action="{% url 'create_user' %}" method='post'>
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
 </form>
 </body>
+    {% endblock %}
 <html>
