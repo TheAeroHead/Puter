@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head style="background-color:#505050;">
+<head style="background-color:#404040;">
   {% block title %}<title>Puter</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +8,9 @@
   <!-- Add additional CSS in static file -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Puter/styles.css' %}">
 </head>
-<body style="background-color:#505050;">
+<body style="background-color:#404040;">
   <div class="container-fluid">
     <div class="row">
 	  <div class="col-sm-2">
@@ -42,7 +42,7 @@
   {% block content %}{% endblock %}
 </body>
     
-<footer style="background-color:#505050;">
+<footer style="background-color:#404040;">
     {% block spacing %}<div style="height:5px"></div>{% endblock %}
     <div align="center">
         <a href="/index/faq">FAQ</a>
