@@ -1,7 +1,9 @@
 <html>
+<body style="background-color:#505050">
 <form action="{% url 'create_user' %}" method='post'>
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
 </form>
+</body>
 <html>
