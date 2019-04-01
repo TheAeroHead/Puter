@@ -14,8 +14,6 @@ TODO:
 		-not a priority, this is for making the page look nice and can be ignored for testing purposes
 		-remove sidebar from unnecessary pages and properly position page using CSS
 		-add filters with link to update search_result.html with relevant new filter for items
-	database script: want a script to add 50 unique items with at least one item in each of the 8 categories to the database
-	*add_item.html: work with products/views.py, products/forms.py, Puter/settings.py and Puter/urls.py to fix upload function
 	*profile_info.html: needs to be fully fleshed out:
 		-displays relevant user information like email, username and name
 		-should display user shipping address
@@ -47,4 +45,6 @@ DONE:
 	*index.html: categories should be used for browsing
 		-Clicking on a category square on the homepage should link to a list of all items in that category
 		-try using ItemListView to display all categories (can link with the all categories link in temporary sidebar to test)
-		-will need a modified solution to filter only results with a specific category (use category__icontains for filter option)
+		-will need a modified solution to filter only results with a specific category (use category__icontains for filter 																option)
+		database script: want a script to add 50 unique items with at least one item in each of the 8 categories to the database
+	*add_item.html: work with products/views.py, products/forms.py, Puter/settings.py and Puter/urls.py to fix upload function
