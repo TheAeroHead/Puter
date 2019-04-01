@@ -1,0 +1,22 @@
+<!-- templates/checkout.html -->
+{% extends "base_generic.html" %}
+<HEAD>
+	{% load staticfiles %}
+	{% block title %}<title>Checkout</title>{% endblock %}
+</HEAD>
+{% block sidebar %} {% endblock %}
+{% block name %}<center><h2>Confirm Checkout:<h2></center>{% endblock %}
+{% block content %}
+<center>
+
+<form action="{% url 'charge' %}" method="post">
+	{% csrf_token %}
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		data-key="{{ key }}"
+		data-description="New Order"
+		data-amount="{{ total_price }}"	<!-- Amount Charged in Cents -->
+		data-locale="auto">
+	</script>
+</form>	
+</center>
+{% endblock %}

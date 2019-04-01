@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
+from cart.forms import AddToCartForm
 
 class ItemListView(generic.ListView):
 	model = Item
@@ -73,12 +74,28 @@ def product_detail(request):
 			error = True
 		else:
 			items = Item.objects.filter(name__icontains=itemName)
+			add_cart_form = AddToCartForm()
 			context = {
 				'items': items,
+				'add_cart_form': add_cart_form,
 			}
 			return render(request, 'products/product_detail.html', context)
 	else:
 		return render(request, 'products/search_result.html', {'error':error})
+		
+def view_cart(request):
+	error = False
+	if 'items' in request.GET:
+		items = request.GET['items']
+		if not items:
+			error = True
+		else:
+			context = {
+				'items': items,
+			}
+			return render(request, 'products/cart.html', context)
+	else:
+		return render(request, 'products/cart.html', {'error': error})
 	
 def search_result(request):
 	error = False

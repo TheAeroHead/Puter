@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  
 </head>
 <body>
   <div class="container-fluid">
@@ -17,10 +16,9 @@
 	  <div class="col-sm-2">
 	<div>  
 		<a href="/index"><button style="font-size:20px"> <i class="fa fa-home" style="color:orange"></i></button></a>
-		<a href="/index/cart"><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
+		<a href="/cart"><button style="font-size:20px"> <i class="fa fa-shopping-cart" style="color:orange"></i></button></a>
 	</div>
      {% block sidebar %}
-
      {% endblock %}
       </div>
 	  

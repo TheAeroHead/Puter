@@ -20,13 +20,18 @@ from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
+
+app_name = "puter"
 
 urlpatterns = [
+	url(r'^cart/', include('cart.urls', namespace="cart")),
     path('admin/', admin.site.urls),
 	path('', include('users.urls')), 	# login page should be here
-	path('home/', include('payments.urls')),
+	path('checkout', include('payments.urls')),
 	path('', RedirectView.as_view(url='index/', permanent=True)),
 	path('login/', include('users.urls')),
 	path('index/', include('products.urls')),
 	path('index.html', RedirectView.as_view(url='/index', permanent=True)),
+	path('cart/', include('cart.urls'), name='cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

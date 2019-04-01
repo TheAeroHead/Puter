@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 	'products.apps.ProductsConfig',
 	'payments.apps.PaymentsConfig',
     'Puter',
+	'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,7 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_wCGhzCW4WE5vQW3inKtCIoej'
 
 LOGIN_REDIRECT_URL = '/index/'
 LOGOUT_REDIRECT_URL = '/login/login'
+
+CART_SESSION_ID = 'cart'
+
+APPEND_SLASH = False

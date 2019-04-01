@@ -1,6 +1,7 @@
 # products/urls.py
 from django.urls import path
 from django.views.generic import RedirectView
+from django.conf.urls import include
 
 from . import views
 
@@ -21,6 +22,7 @@ urlpatterns = [
 	path('profile_info', views.profile_info, name='profile_info'),
     path('order_history', views.order_history, name='order_history'),
     path('order_confirmation', views.order_confirmation, name='order_confirmation'),
+	path('cart', include('cart.urls'), name='cart'),
 	#path('viewItem', views.ItemListView.as_view(), name='viewItem'),
 	#path('', views.ItemListView.as_view(), name='Items'),
 ]
