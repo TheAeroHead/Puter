@@ -47,7 +47,7 @@ def create_user(request):
             return render(request, 'index.html')
     else:
         form = UserCreationForm()
-        return render(request, 'create_user.html', {'form': form})	
+    return render(request, 'create_user.html', {'form': form})	
 
 def contact_us(request):
     return render(request, 'contact_us.html')

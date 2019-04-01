@@ -6,6 +6,7 @@
 	{% block content %}
 <body>
 <br>
+
 <form action="{% url 'create_user' %}" method='post'>
     {% csrf_token %}
     {{ form }}
