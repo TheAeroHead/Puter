@@ -13,7 +13,6 @@ urlpatterns = [
 	#path('', RedirectView.as_view(url='index/cart', permanent=True)),
 	#path('add/<int:item_id>', views.cart_add, name = 'cart_add'),
 	#path('add', views.cart_add, name = 'cart_add'),
-	url(r'^remove/(?P<product_id>\d+)/$', views.cart_remove, name='cart_remove'),
 	url(r'^add/(?P<item_id>\d+)/$', views.cart_add, name='cart_add'),
 	url(r'^remove/(?P<item_id>\d+)/$', views.cart_remove, name='cart_remove'),
 	path('detail/', views.cart_detail, name='cart_detail'),
