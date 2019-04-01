@@ -4,15 +4,6 @@
 <div class="welcome" style="background-color:lightblue">
     <h3 style="font-family:Helvetica Neue;">My Profile</h3>
 </div>
-<br>
-
-{% if messages %}
-<center>
-    {% for message in messages %}
-    <h2{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2{%>
-    {% endfor %}
-</center>
-{% endif %}
 
 <br>
 
