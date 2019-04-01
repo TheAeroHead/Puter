@@ -42,7 +42,7 @@ def charge(request):
 			description='A Django charge',
 			source=request.POST['stripeToken']
 		)
-		return render(request, 'charge.html')
+		return render(request, 'order_confirmation.html')
 	else:
 		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>" % request.path)
 		return response
