@@ -16,24 +16,47 @@
 	}
 	</style>
 </head>
+ 
+<style>
+.inputS {
+    border: none;
+}
+
+.inputRed {background-color: #F44336;} /* Red */ 
+.inputOrange {background-color: #FF9900;} /* Orange */
+.inputYellow {background-color: #FFFF66;} /* Yellow */
+.inputGreen {background-color: #33CC00;} /* Green */
+.inputBlue {background-color: #66CCFF;} /* Blue */
+.inputIndigo {background-color: #9966FF;} /* Indigo */
+.inputViolet {background-color: #FF0099;} /* Violet */
+.inputBlack {background-color: #999999;} /* Black */
+</style>
     
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<body>
         <div class="w3-sidebar w3-dark-grey w3-bar-block" style="width:15%">
             <h3 class="w3-bar-item">Filter</h3>
-            <center>
+            
                 <form action="/index/search_result" method="get">
-                    <input type="submit" value="Cases" name="query"/>
-                    <input type="submit" value="Motherboards" name="query"/>
-                    <input type="submit" value="CPU" name="query"/>
-                    <input type="submit" value="GPU" name="query"/>
-                    <input type="submit" value="PSU" name="query"/>
-                    <input type="submit" value="Storage" name="query"/>
-                    <input type="submit" value="Memory" name="query"/>
-                    <input type="submit" value="Accessories" name="query"/>
+                    <input class="inputS inputRed" background-color="#F44336" type="submit" value="Cases" name="query"/>
+                    <br>
+                    <input class="inputS inputOrange"type="submit" value="Motherboards" name="query"/>
+                    <br>
+                    <input class="inputS inputYellow" type="submit" value="CPU" name="query"/>
+                    <br>
+                    <input class="inputS inputGreen" type="submit" value="GPU" name="query"/>
+                    <br>
+                    <input class="inputS inputBlue" type="submit" value="PSU" name="query"/>
+                    <br>
+                    <input class="inputS inputIndigo" type="submit" value="Storage" name="query"/>
+                    <br>
+                    <input class="inputS inputViolet" type="submit" value="Memory" name="query"/>
+                    <br>
+                    <input class="inputS inputBlack" aria-atomic=""type="submit" value="Accessories" name="query"/>
+                    <br>
                 </form>
-            </center>
+            
         </div>
         
         <div style="margin-left:20%">
