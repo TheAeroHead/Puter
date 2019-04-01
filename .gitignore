@@ -8,6 +8,11 @@ payments/Migrations/
 users/Migrations/
 orders/Migrations/
 cart/Migrations/
+products/migrations/
+payments/migrations/
+users/migrations/
+orders/migrations/
+cart/migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
