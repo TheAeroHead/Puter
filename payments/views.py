@@ -35,9 +35,9 @@ def display(request):
 	
 def charge(request):
 	if request.method == 'POST':
-		charge_amount = request.POST['amount']
+		#charge_amount = request.POST['amount']
 		charge = stripe.Charge.create(
-			amount=charge_amount,			# will need to modify for different charge amounts
+			amount=500,			# will need to modify for different charge amounts
 			currency='usd', 				# will need to modify for different currency types (low priority)
 			description='A Django charge',
 			source=request.POST['stripeToken']

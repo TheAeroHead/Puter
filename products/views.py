@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from .forms import ItemForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from cart.forms import AddToCartForm
 
 class ItemListView(generic.ListView):
 	model = Item
@@ -67,8 +68,10 @@ def product_detail(request):
 			error = True
 		else:
 			items = Item.objects.filter(name__icontains=itemName)
+			add_cart_form = AddToCartForm()
 			context = {
 				'items': items,
+				'add_cart_form': add_cart_form,
 			}
 			return render(request, 'products/product_detail.html', context)
 	else:

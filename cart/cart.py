@@ -11,7 +11,7 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    def add(self, product, quantity=1, update_quantity=False):
+    def add(self, item, quantity=1, update_quantity=False):
         item_id = str(item.id)
         if item_id not in self.cart:
             self.cart[item_id] = {'quantity': 0, 'price': str(item.price)}
@@ -37,10 +37,10 @@ class Cart(object):
         for item in items:
             self.cart[str(item.id)]['item'] = item
 
-        for item in self.cart.values():
-            item['price'] = Decimal(item['price'])
-            item['total_price'] = item['price'] * item['quantity']
-            yield item
+        for object in self.cart.values():
+            object['price'] = Decimal(object['price'])
+            object['total_price'] = object['price'] * object['quantity']
+            yield object
 
     def __len__(self):
         return sum(item['quantity'] for item in self.cart.values())

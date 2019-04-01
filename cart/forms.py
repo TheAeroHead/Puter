@@ -1,7 +1,7 @@
 from django import forms
 
 
-ITEM_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 10)]
+ITEM_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 11)]
 
 class AddToCartForm(forms.Form):
     quantity = forms.TypedChoiceField(choices=ITEM_QUANTITY_CHOICES, coerce=int)

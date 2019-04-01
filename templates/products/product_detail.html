@@ -25,13 +25,16 @@
 		<li><p><strong>Product Name: </strong>{{item.name}}</p></li>
 		<li><p><strong>Price: </strong>${{item.price}}</p></li>
 		<li><p><strong>Shipping Speed: </strong>{{item.shipping_speed}} days</p></li>
-		<li><input placeholder="quantity" type="number" name="quantity"></li>
+		<li><input placeholder="quantity" type="number" name="quantity" value="10"></li>
 		<li>
-			<form action"/cart/add" method="post">
+			
+			<form action="/cart/add/{{item.id}}/" method="post">
+				{{ add_cart_form }}
 				{% csrf_token %}
-				<input type="hidden" name="item" value="{{ item }}">
-				<input type="submit" value="Add to Cart">
+				<input type="submit" value="Add to cart">
 			</form>
+
+
 			<button style="font-size:20px"> <i class="fa fa-cart-plus" style="color:orange"></i></button>
 		</li>
 	</ul>
