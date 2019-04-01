@@ -7,6 +7,7 @@ from django.shortcuts import render, get_object_or_404
 from products.models import Item, Category
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from cart.cart import Cart
 
 # from payments.forms import OrderItemForm
 
@@ -34,7 +35,9 @@ def display(request):
 		return response
 	
 def charge(request):
+	cart = Cart(request)
 	if request.method == 'POST':
+		cart.clear()
 		#charge_amount = request.POST['amount']
 		charge = stripe.Charge.create(
 			amount=500,			# will need to modify for different charge amounts
@@ -70,6 +73,5 @@ def order(request, pk):
 		'item_instance': item_instance,
 	}
 	
-	return render(request, 'templates/order_confirmation.html', context)
-			
+	return render(request, 'templates/order_confirmation.html', context)	
 """
