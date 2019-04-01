@@ -139,4 +139,4 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 CART_SESSION_ID = 'cart'
 
-APPEND_SLASH = False
+APPEND_SLASH = True

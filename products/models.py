@@ -17,8 +17,6 @@ class Item(models.Model):
 	name = models.CharField(max_length=200, db_index=True)
 	description = models.TextField()
 	shipping_speed = models.IntegerField(default=3)
-	available = models.BooleanField(default=True)
-	stock = models.PositiveIntegerField()
 	price = models.DecimalField(max_digits=10, decimal_places=2, db_index=True)
 	image = models.ImageField(upload_to="images", default="images/no-img.jpg") #FilePathField("/static/images", match="img.*")
 	category = models.CharField(max_length=200, db_index=True) #models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
