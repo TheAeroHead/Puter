@@ -70,12 +70,7 @@
             </table>
         <p class="text-right">
             <a href="{% url "index" %}" class="btn btn-default">Continue Shopping</a>
-			<form action="/checkout" method="post">
-					<!-- variable of text shown in url as GET request -->
-					{% csrf_token %}
-					<input type="hidden" name="total_price" value="{{ cart.get_total_price }}">
-					<input type="submit" class="btn btn-primary" value="Checkout">
-			</form>
+			<a href="/orders/create" class="btn btn-primary">Checkout</a>
             
         </p>
         </div>

@@ -35,4 +35,5 @@ urlpatterns = [
 	path('index/', include('products.urls')),
 	path('index.html', RedirectView.as_view(url='/index', permanent=True)),
 	path('cart/', include('cart.urls'), name='cart'),
+	path('orders/', include('orders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
