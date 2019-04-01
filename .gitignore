@@ -6,6 +6,8 @@ Pipfile.lock
 products/Migrations/
 payments/Migrations/
 users/Migrations/
+orders/Migrations/
+cart/Migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

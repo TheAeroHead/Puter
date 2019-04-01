@@ -8,6 +8,8 @@ from products.models import Item, Category
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from cart.cart import Cart
+from orders.forms import OrderForm
+from orders.models import OrderItem
 
 # from payments.forms import OrderItemForm
 
@@ -40,15 +42,28 @@ def display(request):
 def charge(request):
 	cart = Cart(request)
 	if request.method == 'POST':
+		form = OrderForm(request.POST)
+		order = form.save()
+		context = {
+			'key': settings.STRIPE_PUBLISHABLE_KEY,
+			'order': order,
+		}
+		for object in cart:
+			OrderItem.objects.create(
+				order=order,
+				item=object['item'],
+				price=object['price'],
+				quantity=object['quantity']
+			)
 		cart.clear()
 		#charge_amount = request.POST['amount']
 		charge = stripe.Charge.create(
-			amount=500,			# will need to modify for different charge amounts
+			amount=500,						#OrderItem.objects.filter(price__icontains(object['price'])),
 			currency='usd', 				# will need to modify for different currency types (low priority)
-			description='A Django charge',
+			description='A New Django Order',
 			source=request.POST['stripeToken']
 		)
-		return render(request, 'order_confirmation.html')
+		return render(request, 'order_confirmation.html', context)
 	else:
 		response = HttpResponse("<center><h2>FATAL ERROR: Not a POST request.</h2></center>")
 		return response
