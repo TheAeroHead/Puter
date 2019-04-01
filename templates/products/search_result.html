@@ -16,7 +16,48 @@
 	}
 	</style>
 </head>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<body>
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+            <h3 class="w3-bar-item">Filter</h3>
+            <center>
+                <form action="/index/search_result" method="get">
+                    <input type="submit" value="Cases" name="query"/>
+                    <input type="submit" value="Motherboards" name="query"/>
+                    <input type="submit" value="CPU" name="query"/>
+                    <input type="submit" value="GPU" name="query"/>
+                    <input type="submit" value="PSU" name="query"/>
+                    <input type="submit" value="Storage" name="query"/>
+                    <input type="submit" value="Memory" name="query"/>
+                    <input type="submit" value="Accessories" name="query"/>
+                </form>
+            </center>
+            
+            <!-- sorting doesn't work
+            <h3 class="w3-bar-item">Sort by</h3>
+            <form action="/index/search_result" method="get">
+                <center>
+                    <input type="hidden" value="{{ item.category }}" name="query"> 
+                    <input type="submit" value="Price (Low to High)">
+                </center>
+                <br>
+                <center>
+                    <input type="hidden" value="{{ item.category }}" name="query"> 
+                    <input type="submit" value="Price (High to Low)">
+                </center>
+                <br>
+            </form>
+            -->
+        </div>
+        
+        <div style="margin-left:20%">
+            
+            <form class="searchBar" action="/index/search_result" method="get">
+                <input type="text" placeholder="What are you looking for?" name="query" size="30">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        
 		<p>You searched for: <strong>{{ query }}</strong></p>
 		
 		{% if items %}
@@ -38,6 +79,7 @@
 		{% else %}
 			<p>No items matched your search criteria.</p>
 		{% endif %}
+        </div>
 	</body>
 	{% endblock %}
 </html>
