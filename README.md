@@ -1,5 +1,5 @@
-# Puter
-A shopping website for computer parts. Built with the Django Framework.
+# ⛔️ DEPRECATED: Puter
+This project was a school project and is not currently being maintained. It was originally intended to be a shopping website for computer parts. Built with the Django Framework.
 
 REQUIRED TOOLS: <br>
 1. Installation of Python 3.7.2 or later. (should include sqlite3 and pip) <br>
